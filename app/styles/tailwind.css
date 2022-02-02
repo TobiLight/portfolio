@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Dancing+Script&family=Lato:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .app {
+        @apply bg-red-600;
+    }
+
+    .about-me {
+        box-shadow: 3px 3px black;
+        @apply bg-green-100 p-3 text-gray-600 transform -translate-y-1 delay-75 transition-all;
+    }
+
+    .about-me:hover {
+        box-shadow: 3px 3px rgb(134 239 172);
+        @apply bg-black text-green-100;
+    }
+}
