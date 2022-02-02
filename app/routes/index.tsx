@@ -60,7 +60,7 @@ export default function Index() {
             <li>ExpressJS / AdonisJS / NestJs</li>
             <li>Antd Design / TailwindCSS</li>
             <li>MongoDB / PostgreSQL / SQL</li>
-            <li>Herok / Vercel / Netlify</li>
+            <li>Heroku / Vercel / Netlify</li>
             <li>Git</li>
             <li>Python</li>
             <li>Rust</li>
