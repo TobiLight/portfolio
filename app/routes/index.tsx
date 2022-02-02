@@ -88,14 +88,14 @@ export default function Index() {
             <div className="w-full">
               <h1 className="text-5xl font-bold pb-4 text-gray-900">Online</h1>
               <div className="mb-3">
-                <a href="/about-me" className="text-gray-500">Github</a>
+                <a href="https://github.com/TobiLight" className="text-gray-500">Github</a>
               </div>
               <div className="mb-3">
-                <a href="/about-me" className="text-blue-500">Twitter</a>
+                <a href="https://twitter.com/Tobii_ii" className="text-blue-500">Twitter</a>
               </div>
               <div className="mb-3 flex gap-1">
                 <span>📩</span>
-                <p className="text-ellipsis overflow-hidden">oluwatobilobagunloye@gmail.com</p>
+                <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden">oluwatobilobagunloye@gmail.com</a>
               </div>
             </div>
           </div>
