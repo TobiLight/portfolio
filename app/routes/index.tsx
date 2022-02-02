@@ -73,25 +73,25 @@ export default function Index() {
               <h1 className="text-5xl font-bold pb-4 text-gray-900">More</h1>
               <div className="mb-3">
                 <span className="pr-1">😎</span>
-                <a href="/about-me">About me</a>
+                <a href="/about-me" className="underline decoration-wavy">About me</a>
               </div>
               <div className="mb-3">
                 <span className="pr-1">🚧</span>
-                <a href="/about-me">Projects</a>
+                <a href="/projects" className="underline decoration-wavy">Projects</a>
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <a href="/about-me">Resume</a>
+                <a href="/resume" className="underline decoration-wavy">Resume</a>
               </div>
             </div>
 
             <div className="w-full">
               <h1 className="text-5xl font-bold pb-4 text-gray-900">Online</h1>
               <div className="mb-3">
-                <a href="https://github.com/TobiLight" className="text-gray-500">Github</a>
+                <a href="https://github.com/TobiLight" className="text-gray-500 underline decoration-wavy">Github</a>
               </div>
               <div className="mb-3">
-                <a href="https://twitter.com/Tobii_ii" className="text-blue-500">Twitter</a>
+                <a href="https://twitter.com/Tobii_ii" className="text-blue-500 underline decoration-wavy">Twitter</a>
               </div>
               <div className="mb-3 flex gap-1">
                 <span>📩</span>
