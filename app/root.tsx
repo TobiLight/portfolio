@@ -59,7 +59,7 @@ export default function App() {
     <Document>
       <Outlet />
       <ScrollRestoration />
-      <Scripts />
+      {/* <Scripts /> */}
     </Document>
   );
 }

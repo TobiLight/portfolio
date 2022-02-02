@@ -21,7 +21,7 @@ export default function Index() {
     <div>
       <div className="nav flex justify-between h-[50px] items-center bg-black px-4 text-green-100">
         <p className="font-comforter font-bold text-xl tracking-wide">Oluwatobiloba Light</p>
-        <div className="cursor-pointer border border-green-300 rounded p-1 text-green-100 hover:text-gray-600 hover:bg-green-200 transition-all delay-75">
+        <div style={{ boxShadow: '4px 3px #02c523' }} className="cursor-pointer border border-green-300 rounded p-1 text-green-100 hover:text-gray-600 hover:bg-green-200 transition-all delay-75">
           {/* <BxsSunIcon className="w-8 h-8 " /> */}
           <MoonIcon className="w-6 h-6" />
         </div>
