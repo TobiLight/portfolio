@@ -111,6 +111,7 @@ export default function Index() {
                 <h3 className="font-semibold">Others</h3>
               </div>
               <ul className="list-disc pl-10">
+                <li>WordPress</li>
                 <li>Python</li>
                 <li>Rust (in progress... 👨‍🎓)</li>
               </ul>
