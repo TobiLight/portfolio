@@ -1,8 +1,8 @@
 import { LinksFunction } from "remix";
-import me from "~/../public/me.jpeg"
-import MoonIcon from "~/components/icons/Moon";
-import BxsSunIcon from "~/components/icons/Sun";
+import { Footer } from "~/components/Footer";
+import { Navigation } from "~/components/Navigation";
 import styles from "../styles/style.css"
+// import resume from '~/../public/Agunloye_Oluwatobiloba_Resume.pdf'
 
 export const links: LinksFunction = () => {
   return [
@@ -12,6 +12,12 @@ export const links: LinksFunction = () => {
     }
   ]
 }
+
+// export const loader: LoaderFunction = () => {
+//   // const data = resume
+//   // return data
+// }
+
 export default function Index() {
   return (
     //     transform: rotate(
@@ -19,16 +25,8 @@ export default function Index() {
     // );
     //   transform - origin: bottom left;
     <div>
-      <div className="nav flex justify-between h-[50px] items-center bg-black px-4 text-green-100">
-        <p className="font-comforter font-bold text-xl tracking-wide">Oluwatobiloba Light</p>
-        <div style={{ boxShadow: '4px 3px #02c523' }} className="cursor-pointer border border-green-300 rounded p-1 text-green-100 hover:text-gray-600 hover:bg-green-200 transition-all delay-75">
-          {/* <BxsSunIcon className="w-8 h-8 " /> */}
-          <MoonIcon className="w-6 h-6" />
-        </div>
-      </div>
-
-
-      <main className="md:w-[65%] mx-auto">
+      <Navigation />
+      <main className="md:w-[65%] mx-auto pb-10">
         <section className="pt-16 pb-12 bg-[#fff]">
           <div className="px-6 text-gray-600">
             <div className="w-full mx-auto pb-5">
@@ -42,7 +40,7 @@ export default function Index() {
                 I am a Software Developer based in Lagos, Nigeria. I have a passion for solving problems using Javascript, Python and Rust.
               </p>
             </div>
-            <a href="#about" className="about-me font-semibold ">More about me 😎</a>
+            <a href="/about" className="about-me font-semibold ">More about me 😎</a>
           </div>
           <div>
           </div>
@@ -129,7 +127,7 @@ export default function Index() {
               </div>
               <div className="mb-3">
                 <span className="pr-1">😎</span>
-                <a href="/about-me" className="underline decoration-wavy">About me</a>
+                <a href="/about" className="underline decoration-wavy">About me</a>
               </div>
               <div className="mb-3">
                 <span className="pr-1">🚧</span>
@@ -137,7 +135,7 @@ export default function Index() {
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <a href="/resume" className="underline decoration-wavy">Resume</a>
+                <a href={'resume'} download className="underline decoration-wavy">Resume</a>
               </div>
             </div>
 
@@ -160,9 +158,7 @@ export default function Index() {
           </div>
         </section>
       </main>
-      <footer className="p-3 text-center bg-black text-gray-300">
-        <p>Made with ❤ {'&'} 💡</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

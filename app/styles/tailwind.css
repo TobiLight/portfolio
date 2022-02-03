@@ -17,4 +17,12 @@
         box-shadow: 3px 3px rgb(134 239 172);
         @apply bg-black text-green-100;
     }
+
+    .site-theme {
+        box-shadow: 4px 3px #adebc2;
+    }
+
+    .site-theme:hover {
+        box-shadow: none;
+    }
 }

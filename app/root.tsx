@@ -44,7 +44,7 @@ function Document({
         <Meta />
         <Links />
       </head>
-      <body className="md:bg-neutral-300">
+      <body className="md:bg-neutral-300 min-h-screen relative">
         {children}
         {process.env.NODE_ENV === "development" &&
           <LiveReload />
