@@ -2,7 +2,6 @@ import { LinksFunction } from "remix";
 import { Footer } from "~/components/Footer";
 import { Navigation } from "~/components/Navigation";
 import styles from "../styles/style.css"
-// import resume from '~/../public/Agunloye_Oluwatobiloba_Resume.pdf'
 
 export const links: LinksFunction = () => {
   return [
@@ -136,7 +135,7 @@ export default function Index() {
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <a href={'resume'} download className="underline decoration-wavy">Resume</a>
+                <a href='/Agunloye_Oluwatobiloba_Resume.pdf' className="underline decoration-wavy">Resume</a>
               </div>
             </div>
 
@@ -152,7 +151,7 @@ export default function Index() {
                 <a href="https://twitter.com/Tobii_ii" className="text-blue-500 underline decoration-wavy">Twitter</a>
               </div>
               <div className="mb-3 flex gap-1">
-                <span>📩</span>
+                <span aria-label="Email">📩</span>
                 <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden">oluwatobilobagunloye@gmail.com</a>
               </div>
             </div>
