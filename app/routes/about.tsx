@@ -1,5 +1,13 @@
+import { MetaFunction } from "remix"
 import { Footer } from "~/components/Footer"
 import { Navigation } from "~/components/Navigation"
+
+export const meta: MetaFunction = () => {
+    return {
+        title: "About Agunloye Oluwatobiloba",
+        description: "I am a Software Developer based in Lagos, Nigeria. I have a passion for solving problems using Javascript, Python and Rust."
+    }
+}
 
 export default function Aboutme() {
     return (

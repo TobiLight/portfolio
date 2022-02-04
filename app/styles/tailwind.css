@@ -4,6 +4,7 @@
 @tailwind utilities;
 
 @layer components {
+
     .app {
         @apply bg-red-600;
     }
