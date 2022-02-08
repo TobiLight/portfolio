@@ -1,21 +1,33 @@
 import {
+  ActionFunction,
   Links,
   LinksFunction,
   LiveReload,
+  LoaderFunction,
   Meta,
   Outlet,
+  redirect,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useLoaderData
 } from "remix";
 import type { MetaFunction } from "remix";
 import appstyles from "./styles/appstyles.css"
+import { theme } from "./themecookie";
+import { parseCookie } from "./utils/parseCookie";
+import { Navigation } from "./components/Navigation";
 
 export const links: LinksFunction = () => {
   return [
     {
       rel: 'stylesheet',
-      href: appstyles
+      href: appstyles,
     },
+    {
+      rel: "stylesheet",
+      // This is a route: no need to import a file!
+      href: "theme.css",
+    }
     // {
     //   rel: 'stylesheet',
     //   href: tailwind
@@ -26,6 +38,32 @@ export const links: LinksFunction = () => {
 export const meta: MetaFunction = () => {
   return { title: "Tobi's Portfolio" };
 };
+
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const cookie = await parseCookie(request, theme);
+  if (!cookie.mode) cookie.mode = "light";
+
+  return { mode: cookie.mode };
+};
+
+
+export const action: ActionFunction = async ({ request }) => {
+  const cookie = await parseCookie(request, theme);
+  const formData = await request.formData();
+  const { mode } = Object.fromEntries(formData)
+  cookie.mode = mode as string
+
+  console.log(cookie, mode);
+
+  return redirect("/", {
+    headers: {
+      "Set-Cookie": await theme.serialize(cookie),
+    },
+  });
+};
+
+
 
 function Document({
   children,
@@ -44,7 +82,7 @@ function Document({
         <Meta />
         <Links />
       </head>
-      <body className="md:bg-neutral-300 min-h-screen relative">
+      <body className="min-h-screen relative">
         {children}
         {process.env.NODE_ENV === "development" &&
           <LiveReload />
@@ -55,9 +93,10 @@ function Document({
 }
 
 export default function App() {
+  const { mode } = useLoaderData()
   return (
     <Document>
-      <Outlet />
+      <Outlet context={{ mode }} />
       <ScrollRestoration />
       {/* <Scripts /> */}
     </Document>

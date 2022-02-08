@@ -13,10 +13,10 @@ const ProjectsRoute = () => {
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <Navigation />
-            <main className="pt-[60px] px-10 md:w-8/12 mx-auto bg-white" style={{ minHeight: 'inherit' }}>
-                <h1 className="text-4xl">Projects 🚧</h1>
+            <main className="md:w-8/12 projects-page" style={{ minHeight: 'inherit' }}>
+                <h1 className="text-4xl projects-heading">Projects 🚧</h1>
                 <div className="project-tab text-center mt-20">
-                    <h1 className="text-2xl">Under construction 🏗. Please check back soon</h1>
+                    <h1 className="text-2xl about-desc">Under construction 🏗. Please check back soon</h1>
                     {/* <input className="absolute opacity-0" id="project-one" type="radio" name="radio" />
                     <label className="project-label block p-5 leading-normal cursor-pointer" htmlFor="project-one">Edves School Management System</label>
                     <div className="project-content overflow-hidden border-l-2 bg-gray-100 border-indigo-500 leading-normal">

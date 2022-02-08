@@ -1,14 +1,13 @@
-import { LinksFunction } from "remix";
+import { LinksFunction, useOutletContext } from "remix";
 import { Footer } from "~/components/Footer";
 import { Navigation } from "~/components/Navigation";
-import styles from "../styles/style.css"
 
 export const links: LinksFunction = () => {
   return [
-    {
-      rel: 'stylesheet',
-      href: styles
-    }
+    // {
+    //   rel: 'stylesheet',
+    //   href: styles
+    // }
   ]
 }
 
@@ -26,28 +25,28 @@ export default function Index() {
     <div>
       <Navigation />
       <main className="md:w-[65%] mx-auto pb-10">
-        <section className="pt-16 pb-12 bg-[#fff]">
-          <div className="px-6 text-gray-600">
+        <section className="pt-16 pb-12 home-about-me">
+          <div className="px-6">
             <div className="w-full mx-auto pb-5">
-              <h2 className="text-[32px] leading-[28px] font-comforter transform rotate-[-5deg] origin-bottom-left">
+              <h2 className="home-heading">
                 👋
                 <span className="font-bold pl-2">
                   Hi, I'm Light
                 </span>
               </h2>
-              <p className="text-[24px] font-medium">
+              <p className="home-about-me-desc">
                 I am a Software Developer based in Lagos, Nigeria. I have a passion for solving problems using Javascript, Python and Rust.
               </p>
             </div>
-            <a href="/about" className="about-me font-semibold ">More about me 😎</a>
+            <a href="/about" className="about-me-btn font-semibold ">More about me 😎</a>
           </div>
           <div>
           </div>
         </section>
 
-        <section className="bg-[#333] text-green-100 px-6 py-10">
+        <section className="skills-section">
           <div className="flex items-center gap-2 pb-5">
-            <h1 style={{ textShadow: '2px 0px #5ebb76' }} className="text-5xl font-bold">Skills</h1>
+            <h1 className="skills-heading">Skills</h1>
             <span className="text-4xl">👨‍💻</span>
           </div>
           <div className="gap-y-8 lg:gap-y-4 sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
@@ -118,41 +117,41 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="text-gray-600 bg-white px-6 py-10">
+        <section className="more-about-me-section">
           <div className="grid grid-cols-2">
             <div className="flex flex-col">
               <div className="flex gap-2 items-center pb-4">
-                <h1 className="text-3xl font-bold  text-gray-900">More</h1>
+                <h1 className="text-3xl font-bold  more">More</h1>
                 <span className="text-2xl">🔗</span>
               </div>
               <div className="mb-3">
                 <span className="pr-1">😎</span>
-                <a href="/about" className="underline decoration-wavy">About me</a>
+                <a href="/about" className="aboutme">About me</a>
               </div>
               <div className="mb-3">
                 <span className="pr-1">🚧</span>
-                <a href="/projects" className="underline decoration-wavy">Projects</a>
+                <a href="/projects" className="projects">Projects</a>
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <a href='/Agunloye_Oluwatobiloba_Resume.pdf' className="underline decoration-wavy">Resume</a>
+                <a href='/Agunloye_Oluwatobiloba_Resume.pdf' className="resume">Resume</a>
               </div>
             </div>
 
             <div className="w-full">
               <div className="flex gap-2 items-center pb-4">
-                <h1 className="text-3xl font-bold text-gray-900">Online</h1>
+                <h1 className="text-3xl font-bold online">Online</h1>
                 <span className="text-2xl">🌐</span>
               </div>
               <div className="mb-3">
-                <a href="https://github.com/TobiLight" className="text-gray-500 underline decoration-wavy">Github</a>
+                <a href="https://github.com/TobiLight" className="text-gray-500 github">Github</a>
               </div>
               <div className="mb-3">
-                <a href="https://twitter.com/Tobii_ii" className="text-blue-500 underline decoration-wavy">Twitter</a>
+                <a href="https://twitter.com/Tobii_ii" className="text-blue-500 twitter">Twitter</a>
               </div>
               <div className="mb-3 flex gap-1">
                 <span aria-label="Email">📩</span>
-                <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden">oluwatobilobagunloye@gmail.com</a>
+                <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden email">oluwatobilobagunloye@gmail.com</a>
               </div>
             </div>
           </div>

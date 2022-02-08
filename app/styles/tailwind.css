@@ -1,29 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter&family=Dancing+Script&family=Lato:wght@400;700&display=swap');
 @tailwind base;
+
+body {
+    @apply bg-neutral-200;
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 
-    .app {
-        @apply bg-red-600;
+    .navigation {
+        @apply flex justify-between min-h-[50px] items-center bg-black px-4 py-2;
     }
 
-    .about-me {
+    .navigation-title {
+        @apply font-comforter font-bold text-xl tracking-wide text-green-100;
+    }
+
+    .theme-toggle {
+        @apply cursor-pointer border border-green-300 rounded p-1 text-green-100 transition-all delay-75;
+        box-shadow: 4px 3px #adebc2;
+    }
+
+    .theme-toggle:hover {
+        @apply text-gray-600 bg-green-200;
+        box-shadow: none;
+    }
+
+    .home-about-me {
+        @apply bg-white;
+    }
+
+    .home-heading {
+        @apply text-[32px] leading-[28px] font-comforter transform rotate-[-5deg] origin-bottom-left text-gray-600;
+    }
+
+    .home-about-me-desc {
+        @apply text-[24px] font-medium text-gray-800;
+    }
+
+    .about-me-btn {
         box-shadow: 3px 3px black;
         @apply bg-green-100 p-3 text-gray-600 transform -translate-y-1 delay-75 transition-all;
     }
 
-    .about-me:hover {
+    .about-me-btn:hover {
         box-shadow: 3px 3px rgb(134 239 172);
         @apply bg-black text-green-100;
     }
 
-    .site-theme {
-        box-shadow: 4px 3px #adebc2;
+    .skills-section {
+        @apply bg-[#333] text-green-100 px-6 py-10;
     }
 
-    .site-theme:hover {
-        box-shadow: none;
+    .skills-heading {
+        text-shadow: 2px 0px #5ebb76;
+        @apply text-5xl font-bold;
+    }
+
+    .more-about-me-section {
+        @apply text-gray-600 bg-white px-6 py-10;
+    }
+
+    .more,
+    .online {
+        @apply text-gray-900;
+        /* text-shadow: 2px 0px #5ebb76; */
+    }
+
+    .aboutme,
+    .projects,
+    .resume,
+    .github,
+    .twitter,
+    .email {
+        @apply underline decoration-wavy;
+    }
+
+    .footer {
+        @apply w-full p-3 text-center bg-black text-green-100 absolute bottom-0;
+    }
+
+    .about-page,
+    .projects-page {
+        @apply pt-[60px] px-10 mx-auto bg-white;
+    }
+
+    .about-heading,
+    .projects-heading {
+        @apply text-gray-800;
+    }
+
+    .lang {
+        @apply bg-green-100 text-sm px-2 rounded;
     }
 }
