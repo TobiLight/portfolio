@@ -12,7 +12,6 @@ export const meta: MetaFunction = () => {
 export default function Aboutme() {
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
-            <Navigation />
             <main className="md:w-8/12 about-page">
                 <h1 className="text-4xl about-heading">About Me 😎</h1>
                 <div className="mt-16 mb-32">

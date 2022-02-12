@@ -1,5 +1,6 @@
 import {
   ActionFunction,
+  json,
   Links,
   LinksFunction,
   LiveReload,
@@ -9,12 +10,18 @@ import {
   redirect,
   Scripts,
   ScrollRestoration,
-  useLoaderData
+  useFetcher,
+  useFetchers,
+  useLoaderData,
+  useLocation
 } from "remix";
 import type { MetaFunction } from "remix";
 import appstyles from "./styles/appstyles.css"
 import { theme } from "./themecookie";
 import { parseCookie } from "./utils/parseCookie";
+import { ThemeProvider, useTheme } from "./utils/theme-provider";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
 import { Navigation } from "./components/Navigation";
 
 export const links: LinksFunction = () => {
@@ -41,9 +48,9 @@ export const meta: MetaFunction = () => {
 
 
 export const loader: LoaderFunction = async ({ request }) => {
+  const data = await request
   const cookie = await parseCookie(request, theme);
   if (!cookie.mode) cookie.mode = "light";
-
   return { mode: cookie.mode };
 };
 
@@ -51,12 +58,10 @@ export const loader: LoaderFunction = async ({ request }) => {
 export const action: ActionFunction = async ({ request }) => {
   const cookie = await parseCookie(request, theme);
   const formData = await request.formData();
-  const { mode } = Object.fromEntries(formData)
+  const { mode, ...values } = Object.fromEntries(formData)
+  const redirecTo = values.redirectTo as string
   cookie.mode = mode as string
-
-  console.log(cookie, mode);
-
-  return redirect("/", {
+  return redirect(redirecTo, {
     headers: {
       "Set-Cookie": await theme.serialize(cookie),
     },
@@ -72,6 +77,7 @@ function Document({
   children: React.ReactNode;
   title?: string;
 }) {
+  // const [_theme] = useTheme();
   return (
     <html lang="en">
       <head>
@@ -94,12 +100,21 @@ function Document({
 
 export default function App() {
   const { mode } = useLoaderData()
+  // useEffect(() => {
+  //   if (localStorage.getItem('k')) {
+  //     localStorage.setItem('k', mode)
+  //   }
+  // }, [mode])
+
   return (
+    // <ThemeProvider>
     <Document>
-      <Outlet context={{ mode }} />
+      <Navigation themeMode={mode} />
+      <Outlet />
       <ScrollRestoration />
-      {/* <Scripts /> */}
+      <Scripts />
     </Document>
+    // </ThemeProvider>
   );
 }
 

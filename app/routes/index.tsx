@@ -1,6 +1,8 @@
-import { LinksFunction, useOutletContext } from "remix";
+import { ActionFunction, LinksFunction, LoaderFunction, redirect, useOutletContext } from "remix";
 import { Footer } from "~/components/Footer";
 import { Navigation } from "~/components/Navigation";
+import { theme } from "~/themecookie";
+import { parseCookie } from "~/utils/parseCookie";
 
 export const links: LinksFunction = () => {
   return [
@@ -16,6 +18,31 @@ export const links: LinksFunction = () => {
 //   // return data
 // }
 
+
+// export const loader: LoaderFunction = async ({ request }) => {
+//   const cookie = await parseCookie(request, theme);
+//   if (!cookie.mode) cookie.mode = "light";
+//   return { mode: cookie.mode };
+
+// };
+
+
+
+// export const action: ActionFunction = async ({ request }) => {
+//   const cookie = await parseCookie(request, theme);
+//   const formData = await request.formData();
+//   const { mode, ...values } = Object.fromEntries(formData)
+//   const redirecTo = values.redirectTo as string
+//   cookie.mode = mode as string
+//   return redirect(redirecTo, {
+//     headers: {
+//       "Set-Cookie": await theme.serialize(cookie),
+//     },
+//   });
+// };
+
+
+
 export default function Index() {
   return (
     //     transform: rotate(
@@ -23,7 +50,7 @@ export default function Index() {
     // );
     //   transform - origin: bottom left;
     <div>
-      <Navigation />
+      {/* <Navigation /> */}
       <main className="md:w-[65%] mx-auto pb-10">
         <section className="pt-16 pb-12 home-about-me">
           <div className="px-6">

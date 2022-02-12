@@ -113,7 +113,7 @@ export const loader: LoaderFunction = async ({ request }) => {
         })
     }
 
-    return new Response('lighttheme', {
+    return new Response('', {
         status: 200,
         headers: {
             "Content-Type": "text/css"
