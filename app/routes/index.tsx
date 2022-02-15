@@ -1,4 +1,4 @@
-import { ActionFunction, LinksFunction, LoaderFunction, redirect, useOutletContext } from "remix";
+import { ActionFunction, Link, LinksFunction, LoaderFunction, redirect, useOutletContext } from "remix";
 import { Footer } from "~/components/Footer";
 import { Navigation } from "~/components/Navigation";
 import { theme } from "~/themecookie";
@@ -65,7 +65,7 @@ export default function Index() {
                 I am a Software Developer based in Lagos, Nigeria. I have a passion for solving problems using Javascript, Python and Rust.
               </p>
             </div>
-            <a href="/about" className="about-me-btn font-semibold">More about me 😎</a>
+            <Link to="/about" prefetch="intent" className="about-me-btn font-semibold">More about me 😎</Link>
           </div>
           <div>
           </div>
