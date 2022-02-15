@@ -83,8 +83,9 @@ body {
     }
 
     .about-page,
-    .projects-page {
-        @apply pt-[60px] px-10 mx-auto bg-white;
+    .projects-page,
+    .project-page {
+        @apply pt-[60px] px-10 mx-auto bg-white w-full;
     }
 
     .about-heading,
@@ -94,5 +95,32 @@ body {
 
     .lang {
         @apply bg-green-100 text-sm px-2 rounded;
+    }
+
+    @screen sm {
+
+        .about-page,
+        .projects-page,
+        .project-page {
+            @apply w-10/12;
+        }
+    }
+
+    @screen md {
+
+        .about-page,
+        .projects-page,
+        .project-page {
+            @apply w-9/12;
+        }
+    }
+
+    @screen lg {
+
+        .about-page,
+        .projects-page,
+        .project-page {
+            @apply w-8/12;
+        }
     }
 }

@@ -23,6 +23,7 @@ import { ThemeProvider, useTheme } from "./utils/theme-provider";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { Navigation } from "./components/Navigation";
+import { Footer } from "./components/Footer";
 
 export const links: LinksFunction = () => {
   return [
@@ -105,6 +106,7 @@ export default function App() {
     <Document>
       <Navigation themeMode={mode} />
       <Outlet />
+      <Footer />
       <ScrollRestoration />
       <Scripts />
     </Document>
