@@ -113,7 +113,7 @@ export default function Index() {
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <Link to='/Agunloye_Oluwatobiloba_Resume.pdf' prefetch="intent" className="resume">Resume</Link>
+                <a href='/Agunloye_Oluwatobiloba_Resume.pdf' className="resume">Resume</a>
               </div>
             </div>
 
