@@ -4,8 +4,6 @@ import { getClient } from "~/libs/sanity/getClient"
 import { ProjectInterface } from "~/utils/types"
 import projectcss from "../styles/project.css"
 
-
-
 export const links: LinksFunction = () => {
     return [
         {
@@ -39,20 +37,20 @@ const ProjectsRoute = () => {
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="projects-page" style={{ minHeight: 'inherit' }}>
                 <h1 className="text-4xl projects-heading">Projects 🚧</h1>
-                <p className="text-[16px] italic mt-4">These are some of my best projects that I have worked on...</p>
-                <div className="project-tab text-center mt-20 pb-[120px]">
+                <p className="project-subheading">These are some of my best projects that I have worked on...</p>
+                <div className="project-tab">
                     <div className="grid sm:grid-cols-2 gap-8">
                         {projects.map(project => {
                             return (
-                                <div key={project._id} className="relative flex flex-col justify-between rounded max-h-[270px] bg-white shadow-md text-left p-3">
-                                    <h3 title={project.name} className="font-bold text-lg truncate overflow-hidden text-ellipsis max-w-32">{project.name}</h3>
+                                <div key={project._id} className="project-item">
+                                    <h3 title={project.name} className="project-name max-w-32">{project.name}</h3>
                                     <hr className="my-3" />
                                     <div>
-                                        <p>{project.description.slice(0, 90) + '...'}</p>
+                                        <p className="project-description">{project.description.slice(0, 90) + '...'}</p>
                                     </div>
 
                                     <div className="flex justify-end relative mt-3 bottom-0">
-                                        <Link className="p-3 rounded-md bg-green-200 hover:bg-green-300" to={`/${project._id}`}>Open project</Link>
+                                        <Link className="project-btn" to={`/${project._id}`}>Open project</Link>
                                     </div>
                                 </div>
                             )

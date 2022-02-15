@@ -40,14 +40,20 @@ body {
         @apply text-[24px] font-medium text-gray-800;
     }
 
-    .about-me-btn {
+    .about-me-btn,
+    .project-btn {
         box-shadow: 3px 3px black;
         @apply bg-green-100 p-3 text-gray-600 transform -translate-y-1 delay-75 transition-all;
     }
 
-    .about-me-btn:hover {
+    .about-me-btn:hover,
+    .project-btn:hover {
         box-shadow: 3px 3px rgb(134 239 172);
         @apply bg-black text-green-100;
+    }
+
+    .project-item {
+        @apply relative flex flex-col justify-between rounded max-h-[270px] bg-white shadow-md text-left p-3
     }
 
     .skills-section {
@@ -95,6 +101,18 @@ body {
 
     .lang {
         @apply bg-green-100 text-sm px-2 rounded;
+    }
+
+    .project-subheading {
+        @apply text-[16px] italic mt-4;
+    }
+
+    .project-tab {
+        @apply text-center mt-20 pb-[120px];
+    }
+
+    .project-name {
+        @apply font-bold text-lg truncate overflow-hidden text-ellipsis;
     }
 
     @screen sm {

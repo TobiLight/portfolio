@@ -43,15 +43,20 @@ export const loader: LoaderFunction = async ({ request }) => {
         color: rgb(220 252 231 /1);
     }
 
-    .about-me-btn {
+    .about-me-btn, .project-btn {
         box-shadow: 3px 3px #42e942;
         background-color: transparent;
         color: #42e942;
         border: 1px solid #42e942;
     }
 
-    .about-me-btn:hover {
-        border: 0px;
+    .about-me-btn:hover, .project-btn:hover {
+        border: none;
+        text-decoration-line: none;
+    }
+
+    hr {
+        border-color: #42e942;
     }
 
     .skills-section {
@@ -87,7 +92,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     }
 
     .about-page, .projects-page {
-        background-color: rgb( 31 41 55 / 1);
+        background-color: rgb(31 41 55 / 1);
     }
 
     .about-heading, .projects-heading {
@@ -101,6 +106,21 @@ export const loader: LoaderFunction = async ({ request }) => {
     .about-desc > .lang {
         color: #000;
         font-weight: 600;
+    }
+
+    .project-subheading {
+        color: #42e942;
+    }
+
+    .project-name {
+        color: #42e942;
+    }
+
+    .project-item {
+        background-color: transparent;
+        color: rgb(220 252 231 / 1);
+        border: 2px solid #42e942;
+        box-shadow: 0 0 20px 0px #42e94287;
     }
     `
 

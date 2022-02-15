@@ -545,7 +545,8 @@ body{
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-.about-me-btn {
+.about-me-btn,
+    .project-btn {
   box-shadow: 3px 3px black;
   --tw-translate-y: -0.25rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -560,12 +561,29 @@ body{
   transition-delay: 75ms;
 }
 
-.about-me-btn:hover {
+.about-me-btn:hover,
+    .project-btn:hover {
   box-shadow: 3px 3px rgb(134 239 172);
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(220 252 231 / var(--tw-text-opacity));
+}
+
+.project-item{
+  position: relative;
+  display: flex;
+  max-height: 270px;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding: 0.75rem;
+  text-align: left;
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .skills-section{
@@ -655,6 +673,27 @@ body{
   line-height: 1.25rem;
 }
 
+.project-subheading{
+  margin-top: 1rem;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.project-tab{
+  margin-top: 5rem;
+  padding-bottom: 120px;
+  text-align: center;
+}
+
+.project-name{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
 @media (min-width: 640px) {
   .about-page, .projects-page, .project-page{
     width: 83.333333%;
@@ -673,10 +712,6 @@ body{
   }
 }
 
-.absolute{
-  position: absolute;
-}
-
 .relative{
   position: relative;
 }
@@ -693,15 +728,6 @@ body{
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.my-20{
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
-.mt-8{
-  margin-top: 2rem;
 }
 
 .mb-3{
@@ -736,36 +762,8 @@ body{
   margin-bottom: 1rem;
 }
 
-.mt-20{
-  margin-top: 5rem;
-}
-
 .mt-3{
   margin-top: 0.75rem;
-}
-
-.mb-20{
-  margin-bottom: 5rem;
-}
-
-.mb-\[60px\]{
-  margin-bottom: 60px;
-}
-
-.mb-\[160px\]{
-  margin-bottom: 160px;
-}
-
-.mb-\[120px\]{
-  margin-bottom: 120px;
-}
-
-.mt-10{
-  margin-top: 2.5rem;
-}
-
-.block{
-  display: block;
 }
 
 .flex{
@@ -788,18 +786,6 @@ body{
   height: 75px;
 }
 
-.h-auto{
-  height: auto;
-}
-
-.max-h-\[250px\]{
-  max-height: 250px;
-}
-
-.max-h-\[270px\]{
-  max-height: 270px;
-}
-
 .min-h-screen{
   min-height: 100vh;
 }
@@ -814,22 +800,6 @@ body{
 
 .w-full{
   width: 100%;
-}
-
-.w-64{
-  width: 16rem;
-}
-
-.w-32{
-  width: 8rem;
-}
-
-.max-w-\[32px\]{
-  max-width: 32px;
-}
-
-.max-w-\[64px\]{
-  max-width: 64px;
 }
 
 .transform{
@@ -869,10 +839,6 @@ body{
           animation: bounce 1s infinite;
 }
 
-.cursor-pointer{
-  cursor: pointer;
-}
-
 .list-disc{
   list-style-type: disc;
 }
@@ -905,10 +871,6 @@ body{
   justify-content: center;
 }
 
-.justify-between{
-  justify-content: space-between;
-}
-
 .gap-2{
   gap: 0.5rem;
 }
@@ -937,12 +899,6 @@ body{
   overflow: hidden;
 }
 
-.truncate{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 .text-ellipsis{
   text-overflow: ellipsis;
 }
@@ -951,29 +907,8 @@ body{
   border-radius: 0.25rem;
 }
 
-.rounded-md{
-  border-radius: 0.375rem;
-}
-
-.rounded-tr{
-  border-top-right-radius: 0.25rem;
-}
-
-.rounded-tl{
-  border-top-left-radius: 0.25rem;
-}
-
 .border{
   border-width: 1px;
-}
-
-.border-l-2{
-  border-left-width: 2px;
-}
-
-.border-indigo-500{
-  --tw-border-opacity: 1;
-  border-color: rgb(99 102 241 / var(--tw-border-opacity));
 }
 
 .bg-green-200{
@@ -981,26 +916,8 @@ body{
   background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 
-.bg-white{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
 .p-2{
   padding: 0.5rem;
-}
-
-.p-3{
-  padding: 0.75rem;
-}
-
-.p-5{
-  padding: 1.25rem;
 }
 
 .px-6{
@@ -1013,14 +930,12 @@ body{
   padding-right: 1rem;
 }
 
-.py-2{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+.pb-\[120px\]{
+  padding-bottom: 120px;
 }
 
-.py-\[60px\]{
-  padding-top: 60px;
-  padding-bottom: 60px;
+.pb-8{
+  padding-bottom: 2rem;
 }
 
 .pl-6{
@@ -1059,30 +974,6 @@ body{
   padding-right: 0.25rem;
 }
 
-.pb-\[60px\]{
-  padding-bottom: 60px;
-}
-
-.pb-20{
-  padding-bottom: 5rem;
-}
-
-.pb-6{
-  padding-bottom: 1.5rem;
-}
-
-.pb-8{
-  padding-bottom: 2rem;
-}
-
-.pb-\[120px\]{
-  padding-bottom: 120px;
-}
-
-.text-left{
-  text-align: left;
-}
-
 .text-center{
   text-align: center;
 }
@@ -1101,8 +992,8 @@ body{
   line-height: 1.75rem;
 }
 
-.text-\[12px\]{
-  font-size: 12px;
+.text-\[14px\]{
+  font-size: 14px;
 }
 
 .text-4xl{
@@ -1115,42 +1006,12 @@ body{
   line-height: 2.25rem;
 }
 
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-\[13px\]{
-  font-size: 13px;
-}
-
-.text-\[14px\]{
-  font-size: 14px;
-}
-
-.text-sm{
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-.font-bold{
-  font-weight: 700;
-}
-
 .font-semibold{
   font-weight: 600;
 }
 
-.italic{
-  font-style: italic;
-}
-
-.leading-\[20px\]{
-  line-height: 20px;
-}
-
-.leading-normal{
-  line-height: 1.5;
+.font-bold{
+  font-weight: 700;
 }
 
 .text-green-700{
@@ -1178,21 +1039,6 @@ body{
           text-decoration-style: wavy;
 }
 
-.opacity-0{
-  opacity: 0;
-}
-
-.shadow-md{
-  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.hover\:bg-green-300:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
-}
-
 @media (min-width: 640px){
   .sm\:mb-0{
     margin-bottom: 0px;
@@ -1200,14 +1046,6 @@ body{
 
   .sm\:grid{
     display: grid;
-  }
-
-  .sm\:w-11\/12{
-    width: 91.666667%;
-  }
-
-  .sm\:w-full{
-    width: 100%;
   }
 
   .sm\:grid-cols-2{

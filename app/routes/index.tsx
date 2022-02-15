@@ -65,7 +65,7 @@ export default function Index() {
                 I am a Software Developer based in Lagos, Nigeria. I have a passion for solving problems using Javascript, Python and Rust.
               </p>
             </div>
-            <a href="/about" className="about-me-btn font-semibold ">More about me 😎</a>
+            <a href="/about" className="about-me-btn font-semibold">More about me 😎</a>
           </div>
           <div>
           </div>
