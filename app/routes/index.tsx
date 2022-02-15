@@ -178,7 +178,7 @@ export default function Index() {
               </div>
               <div className="mb-3 flex gap-1">
                 <span aria-label="Email">📩</span>
-                <a to="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden email">oluwatobilobagunloye@gmail.com</a>
+                <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden email">oluwatobilobagunloye@gmail.com</a>
               </div>
             </div>
           </div>
