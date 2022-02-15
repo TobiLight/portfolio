@@ -685,13 +685,25 @@ body{
   text-align: center;
 }
 
-.project-name{
+.project-item-name{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
+}
+
+.project-name{
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.goback{
+  padding-bottom: 2rem;
+  font-weight: 600;
 }
 
 @media (min-width: 640px) {
@@ -802,6 +814,14 @@ body{
   width: 100%;
 }
 
+.w-96{
+  width: 24rem;
+}
+
+.w-44{
+  width: 11rem;
+}
+
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -899,6 +919,12 @@ body{
   overflow: hidden;
 }
 
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .text-ellipsis{
   text-overflow: ellipsis;
 }
@@ -932,10 +958,6 @@ body{
 
 .pb-\[120px\]{
   padding-bottom: 120px;
-}
-
-.pb-8{
-  padding-bottom: 2rem;
 }
 
 .pl-6{
@@ -1006,12 +1028,12 @@ body{
   line-height: 2.25rem;
 }
 
-.font-semibold{
-  font-weight: 600;
-}
-
 .font-bold{
   font-weight: 700;
+}
+
+.font-semibold{
+  font-weight: 600;
 }
 
 .text-green-700{

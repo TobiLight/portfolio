@@ -43,7 +43,7 @@ const ProjectsRoute = () => {
                         {projects.map(project => {
                             return (
                                 <div key={project._id} className="project-item">
-                                    <h3 title={project.name} className="project-name max-w-32">{project.name}</h3>
+                                    <h3 title={project.name} className="project-item-name max-w-32">{project.name}</h3>
                                     <hr className="my-3" />
                                     <div>
                                         <p className="project-description">{project.description.slice(0, 90) + '...'}</p>

@@ -30,17 +30,17 @@ const ProjectRoute = () => {
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="project-page pb-[120px]">
-                <div className="pb-8 text-green-700 font-semibold">
-                    <Link to="/projects" prefetch="intent">Go back</Link>
+                <div className="goback">
+                    <Link to="/projects" prefetch="intent" className="underline decoration-wavy">Go back</Link>
                 </div>
                 <div className="flex flex-col gap-y-4">
                     <div>
-                        <h1 className="mb-3 font-bold text-2xl">{project.name}</h1>
-                        <p className="text-[16px]">{project.description}</p>
+                        <h3 className="mb-3 font-bold text-2xl project-name">{project.name}</h3>
+                        <p className="text-[16px] project-description">{project.description}</p>
                     </div>
 
                     <div className="mt-7">
-                        <p className="font-semibold text-xl mb-3">Tech Stack</p>
+                        <h3 className="font-semibold text-xl mb-3">Tech Stack</h3>
                         <div className="flex flex-row flex-wrap gap-2">
                             {project.technologies.map((technology, index) => {
                                 return (
@@ -53,11 +53,11 @@ const ProjectRoute = () => {
                     </div>
 
                     <div className="mt-7">
-                        <p className="font-semibold text-xl mb-3">Contribution</p>
-                        <ul className="list-disc pl-6 grid gap-4">
+                        <h3 className="font-semibold text-xl mb-3">Contribution</h3>
+                        <ul className="list-disc pl-6 grid gap-4 project-contribution">
                             {project.contribution.map((result, index) => {
                                 return (
-                                    <li key={index}>
+                                    <li key={index} className="project-contribution">
                                         {result}
                                     </li>
                                 )
@@ -66,8 +66,8 @@ const ProjectRoute = () => {
                     </div>
 
                     <div className="mt-7">
-                        <p className="font-semibold text-xl mb-3">Outcome</p>
-                        <ul className="list-disc pl-6 grid gap-4">
+                        <h3 className="font-semibold text-xl mb-3">Outcome</h3>
+                        <ul className="list-disc pl-6 grid gap-4 project-outcome">
                             {project.outcome.map((result, index) => {
                                 return (
                                     <li key={index}>
@@ -80,21 +80,21 @@ const ProjectRoute = () => {
 
                     {
                         project.link && <div className="mt-7">
-                            <p className="font-semibold text-xl mb-3">Website</p>
+                            <h3 className="font-semibold text-xl mb-3">Website</h3>
                             <p className="flex gap-2">
                                 <span>🔗</span>
-                                <a href={`${project.link}`} className="text-green-700 font-semibold">{project.link}</a>
+                                <a title={project.link} href={`${project.link}`} className="max-w-96 text-green-700 font-semibold">{project.link}</a>
                             </p>
                         </div>
                     }
 
                     {
                         project.github && <div className="mt-7">
-                            <p className="font-semibold text-xl mb-3">Github Repo</p>
-                            <p className="flex gap-2">
+                            <h3 className="font-semibold text-xl mb-3">Github Repo</h3>
+                            <div className="flex gap-2">
                                 <span>🔗</span>
-                                <a href={`${project.github}`} className="text-green-700 font-semibold">{project.github}</a>
-                            </p>
+                                <a title={project.github} href={`${project.github}`} className="text-green-700 font-semibold truncate overflow-hidden text-ellipsis">{project.github}</a>
+                            </div>
                         </div>
                     }
                 </div>

@@ -111,8 +111,18 @@ body {
         @apply text-center mt-20 pb-[120px];
     }
 
-    .project-name {
+    .project-item-name {
         @apply font-bold text-lg truncate overflow-hidden text-ellipsis;
+    }
+
+    .project-name {
+        @apply mb-3 font-bold text-2xl;
+    }
+
+
+
+    .goback {
+        @apply pb-8 font-semibold;
     }
 
     @screen sm {

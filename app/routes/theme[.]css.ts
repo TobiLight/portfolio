@@ -91,7 +91,7 @@ export const loader: LoaderFunction = async ({ request }) => {
         border-top: 2px solid #42e942;
     }
 
-    .about-page, .projects-page {
+    .about-page, .projects-page , .project-page {
         background-color: rgb(31 41 55 / 1);
     }
 
@@ -108,6 +108,20 @@ export const loader: LoaderFunction = async ({ request }) => {
         font-weight: 600;
     }
 
+    .project-page > div * h3 {
+        color: #42e942;
+    }
+
+    ul, li {
+        color: rgb(220 252 231 / 1);
+    }
+
+    .project-page a {
+        color: rgb(220 252 231 / 1);
+        text-decoration-line: underline;
+        text-decoration-style: wavy;
+    }
+  
     .project-subheading {
         color: #42e942;
     }
@@ -116,11 +130,19 @@ export const loader: LoaderFunction = async ({ request }) => {
         color: #42e942;
     }
 
+    .project-description {
+        color: rgb(220 252 231 / 1);
+    }
+
     .project-item {
         background-color: transparent;
         color: rgb(220 252 231 / 1);
         border: 2px solid #42e942;
         box-shadow: 0 0 20px 0px #42e9424f;
+    }
+
+    .goback {
+        color: rgb(220 252 231 / 1);
     }
     `
 
