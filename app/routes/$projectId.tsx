@@ -119,8 +119,10 @@ export function CatchBoundary() {
 
     if (caught.status === 404) {
         return (
-            <div className="flex flex-col justify-center text-center mt-40 w-5/6 mx-auto h-[75px]">
-                <img src={notFoundGif} alt="404 not found" className="rounded" />
+            <div className="error relative flex flex-col justify-center text-center mt-12 w-5/6 mx-auto">
+                <div className="relative mx-auto">
+                    <img src={notFoundGif} alt="404 not found" className="rounded object-cover" />
+                </div>
                 <p className="text-2xl font-semibold mt-2">
                     {caught.data}
                 </p>
@@ -130,7 +132,11 @@ export function CatchBoundary() {
 
     if (caught.status === 500) {
         return (
-            <p>Yikes! The App has crashed 😬</p>
+            <div className="flex flex-col justify-center text-center mt-40 w-5/6 mx-auto h-[75px]">
+                <p className="text-2xl font-semibold mt-2">
+                    <p>Yikes! The App has crashed 😬</p>
+                </p>
+            </div>
         )
     }
 

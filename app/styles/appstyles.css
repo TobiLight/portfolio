@@ -724,8 +724,19 @@ body{
   }
 }
 
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
+}
+
+.inset-0{
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .bottom-0{
@@ -778,6 +789,10 @@ body{
   margin-top: 0.75rem;
 }
 
+.mt-12{
+  margin-top: 3rem;
+}
+
 .flex{
   display: flex;
 }
@@ -796,6 +811,10 @@ body{
 
 .h-\[75px\]{
   height: 75px;
+}
+
+.h-full{
+  height: 100%;
 }
 
 .min-h-screen{
@@ -820,6 +839,14 @@ body{
 
 .w-44{
   width: 11rem;
+}
+
+.w-\[320px\]{
+  width: 320px;
+}
+
+.w-64{
+  width: 16rem;
 }
 
 .transform{
@@ -940,6 +967,16 @@ body{
 .bg-green-200{
   --tw-bg-opacity: 1;
   background-color: rgb(187 247 208 / var(--tw-bg-opacity));
+}
+
+.object-contain{
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.object-cover{
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-2{

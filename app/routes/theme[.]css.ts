@@ -144,6 +144,10 @@ export const loader: LoaderFunction = async ({ request }) => {
     .goback {
         color: rgb(220 252 231 / 1);
     }
+
+    .error > p {
+        color: #42e942;
+    }
     `
 
     if (cookie.mode === 'dark') {
