@@ -14,7 +14,7 @@ export const meta: MetaFunction = ({ data }: { data: LoaderData | undefined }) =
             description: 'No project found or does not exist!'
         }
     }
-    return { title: `${data?.project.name}`, description: data.project.description }
+    return { title: `Oluwatobiloba Light's Projects - ${data?.project.name}`, description: data.project.description }
 }
 
 export const loader: LoaderFunction = async ({ params }) => {
