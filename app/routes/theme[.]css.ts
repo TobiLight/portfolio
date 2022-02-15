@@ -120,7 +120,7 @@ export const loader: LoaderFunction = async ({ request }) => {
         background-color: transparent;
         color: rgb(220 252 231 / 1);
         border: 2px solid #42e942;
-        box-shadow: 0 0 20px 0px #42e94287;
+        box-shadow: 0 0 20px 0px #42e9424f;
     }
     `
 
