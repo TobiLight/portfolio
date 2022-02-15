@@ -8,7 +8,7 @@ export const links: LinksFunction = () => {
   return [
     // {
     //   rel: 'stylesheet',
-    //   href: styles
+    //   to: styles
     // }
   ]
 }
@@ -153,15 +153,15 @@ export default function Index() {
               </div>
               <div className="mb-3">
                 <span className="pr-1">😎</span>
-                <a href="/about" className="aboutme">About me</a>
+                <Link to="/about" prefetch="intent" className="aboutme">About me</Link>
               </div>
               <div className="mb-3">
                 <span className="pr-1">🚧</span>
-                <a href="/projects" className="projects">Projects</a>
+                <Link to="/projects" prefetch="intent" className="projects">Projects</Link>
               </div>
               <div className="mb-3">
                 <span className="pr-1">📄</span>
-                <a href='/Agunloye_Oluwatobiloba_Resume.pdf' className="resume">Resume</a>
+                <Link to='/Agunloye_Oluwatobiloba_Resume.pdf' prefetch="intent" className="resume">Resume</Link>
               </div>
             </div>
 
@@ -171,14 +171,14 @@ export default function Index() {
                 <span className="text-2xl">🌐</span>
               </div>
               <div className="mb-3">
-                <a href="https://github.com/TobiLight" className="text-gray-500 github">Github</a>
+                <Link to="https://github.com/TobiLight" prefetch="intent" className="text-gray-500 github">Github</Link>
               </div>
               <div className="mb-3">
-                <a href="https://twitter.com/Tobii_ii" className="text-blue-500 twitter">Twitter</a>
+                <Link to="https://twitter.com/Tobii_ii" prefetch="intent" className="text-blue-500 twitter">Twitter</Link>
               </div>
               <div className="mb-3 flex gap-1">
                 <span aria-label="Email">📩</span>
-                <a href="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden email">oluwatobilobagunloye@gmail.com</a>
+                <a to="mailto:oluwatobilobagunloye@gmail.com" className="text-ellipsis overflow-hidden email">oluwatobilobagunloye@gmail.com</a>
               </div>
             </div>
           </div>
