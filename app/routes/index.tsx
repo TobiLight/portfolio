@@ -1,56 +1,8 @@
-import { ActionFunction, Link, LinksFunction, LoaderFunction, redirect, useOutletContext } from "remix";
-import { Footer } from "~/components/Footer";
-import { Navigation } from "~/components/Navigation";
-import { theme } from "~/themecookie";
-import { parseCookie } from "~/utils/parseCookie";
-
-export const links: LinksFunction = () => {
-  return [
-    // {
-    //   rel: 'stylesheet',
-    //   to: styles
-    // }
-  ]
-}
-
-// export const loader: LoaderFunction = () => {
-//   // const data = resume
-//   // return data
-// }
-
-
-// export const loader: LoaderFunction = async ({ request }) => {
-//   const cookie = await parseCookie(request, theme);
-//   if (!cookie.mode) cookie.mode = "light";
-//   return { mode: cookie.mode };
-
-// };
-
-
-
-// export const action: ActionFunction = async ({ request }) => {
-//   const cookie = await parseCookie(request, theme);
-//   const formData = await request.formData();
-//   const { mode, ...values } = Object.fromEntries(formData)
-//   const redirecTo = values.redirectTo as string
-//   cookie.mode = mode as string
-//   return redirect(redirecTo, {
-//     headers: {
-//       "Set-Cookie": await theme.serialize(cookie),
-//     },
-//   });
-// };
-
-
+import { Link } from "remix";
 
 export default function Index() {
   return (
-    //     transform: rotate(
-    //       -5deg
-    // );
-    //   transform - origin: bottom left;
     <div>
-      {/* <Navigation /> */}
       <main className="md:w-[65%] mx-auto pb-10">
         <section className="pt-16 pb-12 home-about-me">
           <div className="px-6">
@@ -184,7 +136,6 @@ export default function Index() {
           </div>
         </section>
       </main>
-      {/* <Footer /> */}
     </div>
   );
 }

@@ -1,10 +1,20 @@
-import { Link, LoaderFunction, useCatch, useLoaderData } from "remix"
+import { Link, LoaderFunction, MetaFunction, useCatch, useLoaderData } from "remix"
 import { getClient } from "~/libs/sanity/getClient";
 import { ProjectInterface } from "~/utils/types";
 import notFoundGif from '../../public/lost.gif'
 
 type LoaderData = {
     project: ProjectInterface
+}
+
+export const meta: MetaFunction = ({ data }: { data: LoaderData | undefined }) => {
+    if (!data) {
+        return {
+            title: 'No project',
+            description: 'No project found or does not exist!'
+        }
+    }
+    return { title: `${data?.project.name}`, description: data.project.description }
 }
 
 export const loader: LoaderFunction = async ({ params }) => {

@@ -1,6 +1,5 @@
 import {
   ActionFunction,
-  json,
   Links,
   LinksFunction,
   LiveReload,
@@ -10,10 +9,7 @@ import {
   redirect,
   Scripts,
   ScrollRestoration,
-  useFetcher,
-  useFetchers,
   useLoaderData,
-  useLocation
 } from "remix";
 import type { MetaFunction } from "remix";
 import appstyles from "./styles/appstyles.css"
@@ -21,7 +17,6 @@ import { theme } from "./themecookie";
 import { parseCookie } from "./utils/parseCookie";
 import { ThemeProvider, useTheme } from "./utils/theme-provider";
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 
@@ -44,12 +39,11 @@ export const links: LinksFunction = () => {
 }
 
 export const meta: MetaFunction = () => {
-  return { title: "Tobi's Portfolio" };
+  return { title: "Oluwatobiloba Light's Portfolio" };
 };
 
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const data = await request
   const cookie = await parseCookie(request, theme);
   if (!cookie.mode) cookie.mode = "light";
   return { mode: cookie.mode };
@@ -71,64 +65,66 @@ export const action: ActionFunction = async ({ request }) => {
 
 
 
-function Document({
-  children,
-  title = `Agunloye Oluwatobiloba's Portfolio`
-}: {
-  children: React.ReactNode;
-  title?: string;
-}) {
-  // const [_theme] = useTheme();
+// function Document({
+//   children,
+//   title
+// }: {
+//   children: React.ReactNode;
+//   title?: string;
+// }) {
+//   // const [_theme] = useTheme();
+//   return (
+//     <html lang="en">
+//       <head>
+//         <meta charSet="utf-8" />
+//         <title>{title}</title>
+//         <meta name="viewport" content="width=device-width,initial-scale=1" />
+//         <Meta />
+//         <Links />
+//       </head>
+//       <body className="min-h-screen relative">
+//         {children}
+//         {process.env.NODE_ENV === "development" &&
+//           <LiveReload />
+//         }
+//       </body>
+//     </html>
+//   );
+// }
+
+// export default function App() {
+//   const { mode } = useLoaderData()
+//   return (
+//     // <ThemeProvider>
+//     <Document>
+//       <Navigation themeMode={mode} />
+//       <Outlet />
+//       <Footer />
+//       <ScrollRestoration />
+//       <Scripts />
+//     </Document>
+//     // </ThemeProvider>
+//   );
+// }
+
+export default function App() {
+  const { mode } = useLoaderData()
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <title>{title}</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
       </head>
       <body className="min-h-screen relative">
-        {children}
-        {process.env.NODE_ENV === "development" &&
-          <LiveReload />
-        }
+        <Navigation themeMode={mode} />
+        <Outlet />
+        <Footer />
+        <ScrollRestoration />
+        <Scripts />
+        {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
     </html>
   );
 }
-
-export default function App() {
-  const { mode } = useLoaderData()
-  return (
-    // <ThemeProvider>
-    <Document>
-      <Navigation themeMode={mode} />
-      <Outlet />
-      <Footer />
-      <ScrollRestoration />
-      <Scripts />
-    </Document>
-    // </ThemeProvider>
-  );
-}
-
-// export default function App() {
-//   return (
-//     <html lang="en">
-//       <head>
-//         <meta charSet="utf-8" />
-//         <meta name="viewport" content="width=device-width,initial-scale=1" />
-//         <Meta />
-//         <Links />
-//       </head>
-//       <body>
-//         <Outlet />
-//         <ScrollRestoration />
-//         <Scripts />
-//         {process.env.NODE_ENV === "development" && <LiveReload />}
-//       </body>
-//     </html>
-//   );
-// }
