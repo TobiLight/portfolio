@@ -1,8 +1,32 @@
-import { json, LoaderFunction, MetaFunction, useCatch, useLoaderData } from "remix"
+import { Link, LinksFunction, LoaderFunction, MetaFunction, useCatch, useLoaderData } from "remix"
 import { Footer } from "~/components/Footer"
-import { Navigation } from "~/components/Navigation"
 import { getClient } from "~/libs/sanity/getClient"
+import projectcss from "../styles/project.css"
 
+interface ProjectInterface {
+    _id: string
+    name: string
+    description: string
+    technologies: Array<string>
+    outcome: Array<string>
+    contribution: Array<string>
+    link?: string
+    github?: string
+}
+
+type ProjectType = {
+    projects: ProjectInterface
+}
+
+
+export const links: LinksFunction = () => {
+    return [
+        {
+            rel: 'stylesheet',
+            href: projectcss
+        }
+    ]
+}
 
 export const meta: MetaFunction = () => {
     return {
@@ -11,31 +35,56 @@ export const meta: MetaFunction = () => {
     }
 }
 
-export const loader: LoaderFunction = async ({ request, params }) => {
-    const projects: object[] = await getClient().fetch(
+export const loader: LoaderFunction = async ({ request, params }): Promise<ProjectInterface[] | null> => {
+    const projects = await getClient().fetch(
         `*[_type == 'project'] | order(_createdAt asc)`
-    )
+    ) as ProjectInterface[]
     if (!projects.length) {
         return null
     }
-    return { projects }
+    let data = projects as ProjectInterface[]
+    return data
 }
 
 const ProjectsRoute = () => {
-    const projects = useLoaderData()
-    console.log('projects', projects)
+    const projects = useLoaderData<ProjectInterface[]>()
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="w-full sm:w-10/12 md:w-9/12 lg:w-8/12 projects-page" style={{ minHeight: 'inherit' }}>
                 <h1 className="text-4xl projects-heading">Projects 🚧</h1>
                 <div className="project-tab text-center mt-20">
                     {/* <h1 className="text-2xl about-desc">Under construction 🏗. Please check back soon</h1> */}
-                    <div className="grid sm:grid-cols-2">
-                        <div className="flex flex-col rounded h-[250px] bg-white shadow-md">
-                            <div className="py-2 bg-green-400 rounded-tr rounded-tl">
-                                <h3>Title</h3>
-                            </div>
-                        </div>
+                    <div className="grid sm:grid-cols-2 gap-8">
+                        {projects.map(project => {
+                            return (
+                                <div key={project._id} className="relative flex flex-col justify-between rounded max-h-[250px] bg-white shadow-md text-left p-3">
+                                    {/* <div className="py-2 px-6 bg-green-200 rounded-tr rounded-tl">
+                                        <h3 className="font-bold text-left text-lg">{project.name}</h3>
+                                    </div> */}
+                                    <h3 className="font-bold text-lg">{project.name}</h3>
+                                    <hr className="my-3" />
+                                    <div>
+                                        <p>{project.description.slice(0, 90) + '...'}</p>
+                                    </div>
+
+                                    <div className="flex justify-end relative mt-3 bottom-0">
+                                        <Link className="p-3 rounded-md bg-green-200 hover:bg-green-300" to="/">Open project</Link>
+
+
+                                    </div>
+
+                                    {/* <input type="radio" name={project.name} id={project._id} />
+                                    <label htmlFor={project._id} className="py-2 px-6 bg-green-200 rounded-tr rounded-tl">
+                                        <h3 className="font-bold text-left text-lg">{project.name}</h3>
+                                    </label>
+                                    <div className="project-description text-left py-2 px-4">
+                                        <p>{`${project.description.slice(0, 120).concat('')}`} <Link to="/" className="text-green-600 font-semibold decoration-wavy underline">check it out</Link></p>
+
+                                        </div> */}
+                                </div>
+                            )
+                        })}
+
                     </div>
 
                     {/* <input className="absolute opacity-0" id="project-one" type="radio" name="radio" />
@@ -44,9 +93,9 @@ const ProjectsRoute = () => {
                         <p className="p-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, architecto, explicabo perferendis nostrum, maxime impedit atque odit sunt pariatur illo obcaecati soluta molestias iure facere dolorum adipisci eum? Saepe, itaque.</p>
                     </div> */}
                 </div>
-            </main>
+            </main >
             <Footer />
-        </div>
+        </div >
     )
 }
 

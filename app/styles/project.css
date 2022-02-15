@@ -1,0 +1,47 @@
+input {
+    display: none;
+}
+
+label {
+    display: block;
+    padding: 8px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    /* background: #6AAB95; */
+    /* border-radius: 3px; */
+    /* color: #FFF; */
+    transition: ease .5s;
+}
+
+label:hover {
+    background: #4E8774;
+    color: #fff;
+}
+
+input[type="radio"]+label+.project-description {
+    display: none;
+}
+
+input[type="radio"]:checked+label+.project-description {
+    display: block;
+}
+
+input+label+.project-description {
+    opacity: 0;
+}
+
+input:checked+label+.project-description {
+    opacity: 1;
+}
+
+input+label+.project-description {
+    opacity: 0;
+    height: 0;
+    font-size: 0;
+}
+
+input:checked+label+.project-description {
+    opacity: 0;
+    height: 120px;
+    font-size: 14px;
+}

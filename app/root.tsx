@@ -100,12 +100,6 @@ function Document({
 
 export default function App() {
   const { mode } = useLoaderData()
-  // useEffect(() => {
-  //   if (localStorage.getItem('k')) {
-  //     localStorage.setItem('k', mode)
-  //   }
-  // }, [mode])
-
   return (
     // <ThemeProvider>
     <Document>
