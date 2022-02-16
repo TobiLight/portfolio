@@ -119,10 +119,8 @@ body {
         @apply mb-3 font-bold text-2xl;
     }
 
-
-
     .goback {
-        @apply pb-8 font-semibold;
+        @apply pb-8 font-semibold w-full flex justify-end;
     }
 
     @screen sm {

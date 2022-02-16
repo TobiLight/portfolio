@@ -36,6 +36,9 @@ const ProjectsRoute = () => {
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="projects-page" style={{ minHeight: 'inherit' }}>
+                <div className="goback">
+                    <Link to="/" prefetch="intent" className="underline decoration-wavy">Home</Link>
+                </div>
                 <h1 className="text-4xl projects-heading">Projects 🚧</h1>
                 <p className="project-subheading">These are some of the projects that I have worked on...</p>
                 <div className="project-tab">
