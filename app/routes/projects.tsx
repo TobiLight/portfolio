@@ -45,16 +45,19 @@ const ProjectsRoute = () => {
                     <div className="grid sm:grid-cols-2 gap-8">
                         {projects.map(project => {
                             return (
-                                <div key={project._id} className="project-item">
-                                    <h3 title={project.name} className="project-item-name max-w-32">{project.name}</h3>
-                                    <hr className="my-3" />
-                                    <div>
-                                        <p className="project-description">{project.description.slice(0, 90) + '...'}</p>
+                                <div key={project._id} className="project-item text-left">
+                                    <h3 title={project.name} className="project-item-name max-w-32 mb-3">{project.name}</h3>
+                                    {/* <hr className="my-3" /> */}
+                                    <div className="shadow-md rounded border p-2 project-info-wrapper">
+                                        <div>
+                                            <p className="project-description">{project.description.slice(0, 90) + '...'}</p>
+                                        </div>
+
+                                        <div className="flex justify-end relative mt-3 bottom-0">
+                                            <Link className="project-btn rounded" to={`/${project._id}`}>Open</Link>
+                                        </div>
                                     </div>
 
-                                    <div className="flex justify-end relative mt-3 bottom-0">
-                                        <Link className="project-btn" to={`/${project._id}`}>Open project</Link>
-                                    </div>
                                 </div>
                             )
                         })}
