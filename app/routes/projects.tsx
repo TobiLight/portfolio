@@ -37,7 +37,7 @@ const ProjectsRoute = () => {
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="projects-page" style={{ minHeight: 'inherit' }}>
                 <h1 className="text-4xl projects-heading">Projects 🚧</h1>
-                <p className="project-subheading">These are some of my best projects that I have worked on...</p>
+                <p className="project-subheading">These are some of the projects that I have worked on...</p>
                 <div className="project-tab">
                     <div className="grid sm:grid-cols-2 gap-8">
                         {projects.map(project => {
