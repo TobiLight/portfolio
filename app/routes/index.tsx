@@ -123,10 +123,10 @@ export default function Index() {
                 <span className="text-2xl">🌐</span>
               </div>
               <div className="mb-3">
-                <Link to="https://github.com/TobiLight" prefetch="intent" className="text-gray-500 github">Github</Link>
+                <a href="https://github.com/TobiLight" className="text-gray-500 github">Github</a>
               </div>
               <div className="mb-3">
-                <Link to="https://twitter.com/Tobii_ii" prefetch="intent" className="text-blue-500 twitter">Twitter</Link>
+                <a href="https://twitter.com/Tobii_ii" className="text-blue-500 twitter">Twitter</a>
               </div>
               <div className="mb-3 flex gap-1">
                 <span aria-label="Email">📩</span>
