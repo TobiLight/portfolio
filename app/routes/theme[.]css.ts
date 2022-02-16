@@ -43,11 +43,18 @@ export const loader: LoaderFunction = async ({ request }) => {
         color: rgb(220 252 231 /1);
     }
 
-    .about-me-btn, .project-btn {
+    .about-me-btn {
         box-shadow: 3px 3px #42e942;
         background-color: transparent;
         color: #42e942;
         border: 1px solid #42e942;
+    }
+
+    .project-btn {
+        background-color: transparent;
+        color: rgb(220 252 231 / 1);
+        box-shadow: 3px 3px rgb(220 252 231 / 1);
+        border: 1px solid rgb(220 252 231 / 1);
     }
 
     .about-me-btn:hover, .project-btn:hover {
@@ -56,7 +63,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     }
 
     hr {
-        border-color: #42e942;
+        border-color: rgb(220 252 231 / 1);
     }
 
     .skills-section {
@@ -137,8 +144,11 @@ export const loader: LoaderFunction = async ({ request }) => {
     .project-item {
         background-color: transparent;
         color: rgb(220 252 231 / 1);
-        border: 2px solid #42e942;
+        border: 2px solid rgb(220 252 231 / 1);
         box-shadow: 0 0 20px 0px #42e9424f;
+    }
+
+    .project-item-name {
     }
 
     .goback {
