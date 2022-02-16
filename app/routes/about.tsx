@@ -19,7 +19,7 @@ export default function Aboutme() {
                 <div className="mt-16 mb-32">
                     <p className="about-desc">
                         My name is <span className="font-bold">Oluwatobiloba Light</span>, a cool guy 😄, a team player 🤝 , a frontend developer (and a backend developer but sometimes, lol. Sooo, fullstack?? 😏) originally from Ogun state, Nigeria and, currently based in Lagos, Nigeria.
-                        <br />Homepage
+                        <br />
                         <br />
                         I have been in tech and working on web projects for over 4 years with experience in Frontend ranging from <span className="lang">Javascript</span>, <span className="lang">ReactJs</span>, <span className="lang">VueJs</span>, <span className="lang">SvelteJS</span>, <span className="lang">CSS</span> and Backend, <span className="lang">NodeJS</span>. (PS. I just started learning <span className="lang">Python</span> and <span className="lang">Rust</span>). I have worked for Edves School Management System, 12Musts and Technolcast. Although,  I have mostly worked as a freelancer through the years and delivered beyond expectation 💯 💪. You can see some receipts <span aria-label="Projects"><a className="animated animate-bounce underline decoration-wavy" href="/projects" title="Take a look at some of my projects">here 🧾</a></span>.
                         <br />
