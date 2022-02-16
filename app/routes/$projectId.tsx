@@ -1,4 +1,4 @@
-import { Link, LoaderFunction, MetaFunction, useCatch, useLoaderData } from "remix"
+import { Link, LoaderFunction, MetaFunction, useCatch, useLoaderData, useTransition } from "remix"
 import { getClient } from "~/libs/sanity/getClient";
 import { ProjectInterface } from "~/utils/types";
 import notFoundGif from '../../public/lost.gif'
@@ -37,6 +37,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 const ProjectRoute = () => {
     const { project } = useLoaderData<LoaderData>()
+
     return (
         <div style={{ minHeight: 'inherit' }} className="flex flex-col">
             <main className="project-page pb-[120px]">
