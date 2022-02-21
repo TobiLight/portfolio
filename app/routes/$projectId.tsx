@@ -94,7 +94,7 @@ const ProjectRoute = () => {
                             <h3 className="font-semibold text-xl mb-3">Website</h3>
                             <p className="flex gap-2">
                                 <span>🔗</span>
-                                <a title={project.link} href={`${project.link}`} className="max-w-96 text-green-700 font-semibold">{project.link}</a>
+                                <a title={project.link} href={`${project.link}`} className="underline decoration-wavy max-w-96 text-green-700 font-semibold">{project.link}</a>
                             </p>
                         </div>
                     }
@@ -104,7 +104,7 @@ const ProjectRoute = () => {
                             <h3 className="font-semibold text-xl mb-3">Github Repo</h3>
                             <div className="flex gap-2">
                                 <span>🔗</span>
-                                <a title={project.github} href={`${project.github}`} className="text-green-700 font-semibold truncate overflow-hidden text-ellipsis">{project.github}</a>
+                                <a title={project.github} href={`${project.github}`} className="text-green-700 font-semibold truncate overflow-hidden text-ellipsis underline decoration-wavy">{project.github}</a>
                             </div>
                         </div>
                     }
